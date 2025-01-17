@@ -11,10 +11,11 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class Users {
+@Table(name = "user")
+public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(insertable = false, updatable = false)
+    @Column(updatable = false)
     private int id;
 
     @Column(nullable = false, unique = true)
@@ -25,4 +26,7 @@ public class Users {
 
     @Column(nullable = false)
     private String password;
+
+    @Column(nullable = false)
+    private String role = "BASIC_USER";
 }
