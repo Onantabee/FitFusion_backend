@@ -15,7 +15,6 @@ import java.util.List;
 public class UserRegistrationController {
 
     private RegistrationService registrationService;
-    private UserRepository userRepository;
 
     @PostMapping
     public String register(@RequestBody RegistrationRequest request){
@@ -25,10 +24,5 @@ public class UserRegistrationController {
     @GetMapping(path = "confirm")
     public String confirm(@RequestParam("token") String token) {
         return registrationService.confirmToken(token);
-    }
-
-    @GetMapping("users")
-    public List<User> getAll(){
-        return userRepository.findAll();
     }
 }
