@@ -48,4 +48,3 @@ public class WebSecurityConfiguration {
         return provider;
     }
 }
-

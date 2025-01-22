@@ -12,6 +12,7 @@ import java.util.List;
 @RestController
 @RequestMapping(path = "api/register")
 @AllArgsConstructor
+@CrossOrigin(origins = "*")
 public class UserRegistrationController {
 
     private RegistrationService registrationService;
